@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form method="post" action="https://webhook.site/c712fa54-6ee3-4e23-b193-2bbd33d7af23" >
+
+        <fieldset>
+
+            <legend>Registro de usuario</legend>
+
+            <label for="username">Nombre:</label>
+            <input type="text" placeholder="Ingresa tu nombre" value="" id="username" name="username" />
+    
+            <br/>
+    
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Ingresar @"  id="email" name="email" />
+    
+            <br/>
+    
+            <label for="contrasena">Contrasema:</label>
+            <input type="password" placeholder="INgresar tu contrasena"  id="contrasena" name="contrasena"  >
+    
+        </fieldset>
+
+
+        <p>INgresa tus colores preferidos</p>
+        <label for="rojo">Rojo</label>
+        <input type="checkbox" name="color_preferido" id="rojo" value="rojo"  />
+
+        <label for="verde">verde</label>
+        <input type="checkbox" name="color_preferido" id="verde" value="verde"  />
+
+        <label for="morado">morado</label>
+        <input type="checkbox" name="color_preferido" id="morado" value="morado"  />
+
+        <br/>
+
+        <p>INgresa tu signo del zodiaco</p>
+
+
+        <label for="aries">aries</label>
+        <input  type="radio"  name="signo" id="aries" value="aries"  />
+
+        <label for="virgo">virgo</label>
+        <input  type="radio"  name="signo" id="virgo" value="virgo"  />
+
+        <label for="tauro">tauro</label>
+        <input  type="radio"  name="signo" id="tauro" value="tauro"  />
+
+        <br/>
+        
+
+        <input type="file" accept="*" />
+
+
+        <input type="datetime-local" name="fecha_checkin" id="checkin" >
+
+        <input type="hidden" name="key-secret" id="key-secret" value="0921920910219201">
+
+        <br/>
+
+
+        <label>
+            INgresa tu lenguaje preferido:
+        </label>
+        <select name="coding">
+            <option value="Javascript">Javascript</option>
+            <option value="python" >Python</option>
+            <option value="C++">C++</option>
+        </select>
+
+
+        <br/>
+        <input type="submit" value="Enviar datos" />
+
+    </form>
+
+
+</body>
+</html>

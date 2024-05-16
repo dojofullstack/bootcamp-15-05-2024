@@ -1,0 +1,65 @@
+
+
+
+Tipos de alojamientos de sitios web:
+
+1. Web Hosting (Share Hosting)
+- trbajan con stack especifico javascript, php, java, python.
+- se maneja multiples planes
+- limitaciones, mas ancho de banda, mas memoria (storage), limitan las visitas
+- El conocimientos basicos.
+- email bussines, herramienstas secondarias.
+- planes desde 5 usd / mensual.
+- soporte tecnico lento.
+
+
+
+2. Servidores Privados & VPS:
+ - Puedes trabajar con multiples tecnologias (frontend & backend)
+ - Precios segun la capacidad del servidor (memory, cpu, ancho de banda)
+ - minimo 10 usd / mensual (100 GB RAM, 100 CPU)
+ - Puedes elegir sistema operativo (Windows Server & Linux)
+- Se requiere conocimientos mediano sobre gestion de servidores
+- Soporte mas activo.
+
+
+
+(Freekis Tech)
+2.5 Crear tu propio Servidor Privado (conocimentos medianos)
+- Red intenet
+- Computador PC, Laptop, Phone.
+- Router.
+- IP Static & Dinamica (Servicios Proxy)
+- Firewall & Servidor WEb Local.
+- Formas mas sencilla sin muchis conocimentos tecnicos puedes utlizar NGROK (24x7)
+
+
+
+3. Cloud Services (Infraestructura)
+- AWS, Amazon Web Services PIONERO (amazon.com)
+- Google Cloud (para empresas startup, pequenas, pymes, grandes)
+- Azure de Microsoft.
+- Huawei Cloud.
+- Alibaba Cloud.
+
+- Bussine Plan (Paga por uso).
+- Serverless (Alta escalabilidad, alta disponibilidad, pagas por uso)
+- si requieres conocimentos medianos tenicos de cloud services.
+- Soporte es muy rapido (eficiente)
+
+
+
+
+4. Startup Netlify y Vercel (Frontend)
+- Plan de inicio gratis
+
+
+
+
+
+
+
+
+
+
+

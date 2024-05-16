@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .container-flexbox {
+            border: 5px solid purple;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 3px;
+            justify-content: center;
+        }
+
+        .item {
+            border: 5px solid yellowgreen;
+        }
+
+        .item1 {
+            background-color: aqua;
+            order: 1
+        }
+
+        .item2 {
+            background-color: purple;
+            order: 20;
+        }
+
+        .item3 {
+            background-color: orange;
+            order: 19;
+        }
+
+        .item-flex {
+            background-color: yellow;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="container-flexbox">
+
+        <div class="item item1">elemento</div>
+        <div class="item item2">elemento</div>
+        <div class="item item3">elemento</div>
+        <div class="item">elemento</div>
+        <div class="item">elemento</div>
+        <div class="item">elemento</div>
+        <div class="item">elemento</div>
+        <div class="item">elemento</div>
+        <div class="item">elemento</div>
+        <div class="item">elemento</div>
+        <div class="item">elemento</div>
+
+        <div class="item item-flex">
+            <button>aceptar</button>
+            <button>cancelar</button>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

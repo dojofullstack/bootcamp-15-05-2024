@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 100px 500px 100px;
+        }
+
+        header { 
+            border: 5px solid pink;
+        }
+
+        main { 
+            border: 5px solid orange;
+            display: grid;
+            grid-template-columns: 80% 20%;
+            grid-template-rows: 80% 20%;
+        }
+
+        footer { 
+            border: 5px solid blueviolet;
+        }
+
+        section {
+            border: 5px solid green;
+        }
+
+        aside {
+            border: 5px solid black;
+            grid-row-start: 1;
+            grid-row-end: span 2 ;
+            grid-column-start:2;
+            grid-column-end: span 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container-grid">
+
+        <header>
+            <nav>
+                <h1>DojoBlog</h1>
+            </nav>
+        </header>
+    
+        <main>
+
+            <section>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae obcaecati, tenetur corporis eius laudantium illo repudiandae distinctio quos molestias similique aut animi aliquam totam enim et? Eos exercitationem a esse adipisci quibusdam? Ducimus animi a facilis inventore, debitis sint eius odio eveniet sed obcaecati pariatur suscipit ullam, impedit itaque soluta consequatur modi veniam neque tempora doloribus similique mollitia accusamus praesentium temporibus. Repellat totam tenetur inventore earum hic veritatis aperiam! Aspernatur, fuga molestiae. Itaque minima explicabo quam voluptatibus iusto quae amet nisi unde quaerat corporis. In sed quidem incidunt sit laudantium a perferendis officiis, provident commodi modi. Doloremque earum aut quasi!
+                </p>
+            </section>
+            <section>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae obcaecati, tenetur corporis eius laudantium illo repudiandae distinctio quos molestias similique aut animi aliquam totam enim et? Eos exercitationem a esse adipisci quibusdam? Ducimus animi a facilis inventore, debitis sint eius odio eveniet sed obcaecati pariatur suscipit ullam, impedit itaque soluta consequatur modi veniam neque tempora doloribus similique mollitia accusamus praesentium temporibus. Repellat totam tenetur inventore earum hic veritatis aperiam! Aspernatur, fuga molestiae. Itaque minima explicabo quam voluptatibus iusto quae amet nisi unde quaerat corporis. In sed quidem incidunt sit laudantium a perferendis officiis, provident commodi modi. Doloremque earum aut quasi!
+                </p>
+            </section>
+
+            <aside>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error, aliquid optio, adipisci consectetur ab nostrum sint, vitae accusantium rerum nihil perferendis quibusdam enim assumenda perspiciatis eius dolorem doloremque repellat. Quasi?
+                </p>
+            </aside>
+      
+        </main>
+    
+        <footer>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, odit!</p>
+    
+        </footer>
+
+    </div>
+
+
+    
+</body>
+</html>

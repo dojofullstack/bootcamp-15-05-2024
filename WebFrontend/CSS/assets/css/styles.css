@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+
+
+* {
+    font-family: "Whisper", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: peru;
+}
+
+
+button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 1rem 2rem;
+    /* padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px; */
+    /* padding: 10px 30px; */
+    border: 5px solid white;
+    /* border: none; */
+    /* border-right: 5px solid yellow; */
+    margin: 20px;
+    width: 300px;
+    /* box-sizing: border-box; */
+}
+
+
+#btn-primary {
+    padding: 10px 25px;
+    border: none;
+    background-color: pink;
+    color: yellow;
+}
+
+
+#imgDojo {
+    width: 450px;
+    border: 8px solid white;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#imgDojoSecundary {
+    width: 350px;
+}
+
+
+.title {
+    color: blue;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+/* h3 {
+    color: white;
+    font-size: 25px;
+}
+
+h4 {
+    color: white;
+    font-size: 25px;
+} */
+
+
+h3, h4 {
+    color: white;
+    font-size: 25px;
+}
+
+.linkDojo {
+    color: yellow;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+a.linkDojo {
+    color: white;
+    background-color: purple;
+}
+
+div.container > div.container-dojo > a.linkDojo {
+    color: pink;
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+li:nth-child(2) {
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+}

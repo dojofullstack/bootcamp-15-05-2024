@@ -1,0 +1,78 @@
+
+
+body {
+    background-color: pink;
+}
+
+main {
+    position: relative;
+    border: 5px solid red;
+    width: 700px;
+    height: 700px;
+}
+
+.elemento {
+    position: absolute;
+    bottom: 100px;
+    left:50px;
+    width: 150px;
+    height: 150px;
+    background-color: aqua;
+}
+
+.elemento2 {
+    position: absolute;
+    top: 100px;
+    right:50px;
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+}
+
+.elemento3 {
+    position: relative;
+    bottom: 100px;
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+}
+
+
+#wasap {
+    padding: 30px;
+    border: none;
+    background-color: green;
+    border-radius: 30px;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
+
+#wasap-2 {
+    padding: 30px;
+    border: none;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    z-index: 1;
+}
+
+
+#wasap-3 {
+    padding: 30px;
+    border: none;
+    background-color: purple;
+    border-radius: 30px;
+    font-size: 20px;
+    position: fixed;
+    bottom: 30px;
+    left: 80px;
+    margin: 20px;
+}

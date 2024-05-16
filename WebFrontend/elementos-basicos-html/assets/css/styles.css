@@ -1,0 +1,33 @@
+
+/* selector global */
+* {
+    font-family: "Ubuntu", sans-serif;
+   font-weight: 300;
+}
+
+
+body {
+    background-color: brown;
+}
+
+h1 {
+    font-family: "Nunito", sans-serif;
+    color: white;
+    font-style: italic;
+}
+
+
+li {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+}
+
+
+p {
+    color: yellow;
+    line-height: 50px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+}

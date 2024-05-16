@@ -1,0 +1,88 @@
+
+
+
+body {
+    background-color: blanchedalmond;
+}
+
+.nombre {
+    font-size: 20px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: none;
+}
+
+.nombre:focus {
+    color: yellow;
+    background-color: green;
+}
+
+
+p:focus {
+    color: yellow;
+    background-color: green;
+}
+
+.btn-buy:focus {
+    padding: 30px 50px;
+    background-color: black;
+    color: yellow;
+}
+
+
+.item1:hover {
+    color: green;
+    font-size: 25px;
+}
+
+
+.item2:hover {
+    color: green;
+    font-size: 25px;
+    background-color: purple;
+}
+
+.item3:hover {
+    color: green;
+    font-size: 25px;
+    background-color: purple;
+    border-radius: 50px;
+    zoom: 1.2;
+}
+
+
+.link-tiktok:active {
+    color: green;
+    background-color: yellow;
+}
+
+.btn-start:active {
+    background-color: palevioletred;
+    font-size: 30px;
+}
+
+
+
+li:first-child {
+    background-color: yellow;
+    font-size: 20px;
+}
+
+li:last-child {
+    background-color: blue;
+    font-size: 20px;
+}
+
+
+li:nth-child(3) {
+    background-color: purple;
+    font-size: 20px;
+    color: white;
+}
+
+
+li:nth-child(4) {
+    background-color: orange;
+    font-size: 20px;
+    color: white;
+}
