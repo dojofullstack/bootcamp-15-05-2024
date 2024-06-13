@@ -16,7 +16,18 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-    </head>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!--         
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"        ></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/locale/es.js"></script> -->
+
 
     <body>
         <header>
@@ -84,19 +95,33 @@
                         Crear Tienda Virtual
                     </button>
 
-                        <form class="d-flex my-2 my-lg-0">
+                        <div class="d-flex my-2 my-lg-0">
                             <input
                                 class="form-control me-sm-2"
                                 type="text"
                                 placeholder="Search"
                             />
                             <button
+                                id="btn_buscar"
                                 class="btn btn-outline-success my-2 my-sm-0"
                                 type="submit"
                             >
-                                Search
+                                Buscar producto
                             </button>
-                        </form>
+                        </div>
+
+                        <div class="mx-3">
+                            <img height="50px" class="border-circle" id="userFace" src="" alt="">
+                            <p class="text-white" id="userName"></p>
+                        </div>
+
+                        <div id="btn-login">
+                            <a href="login.html">
+                                <button class="btn btn-primary">Iniciar Sesion</button>
+                            </a>
+                        </div>
+
+                        
                     </div>
                 </div>
             </nav>
@@ -162,6 +187,13 @@
                 >
                     Crear Producto
                 </button>
+
+
+
+
+                <div class="d-flex flex-wrap gap-3" id="catalgo-product">
+
+                </div>
 
 
             </div>
@@ -356,6 +388,12 @@
         </div>
         
 
+<!-- <div>
+  <canvas id="myChart"></canvas>
+</div> -->
+
+
+
 
 
 
@@ -387,6 +425,26 @@
         ></script>
 
         <script src="/projectTiendaVirtual/js/app.js"></script>
+
+        <!-- <script src="/projectTiendaVirtual/js/alamacenamiento.js"></script> -->
+
+
+<!-- 
+          <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js" ></script>
+
+        <script src="/assets/js/liberias.js"></script> -->
+
+
+
+        
+        <script>
+            cargarTienda();
+
+
+            tienda.validarSesionUser();
+        </script>
+
+
 
     </body>
 </html>

@@ -133,5 +133,18 @@
         <!-- <script src="/assets/js/estructuras/iteradores.js"></script> -->
         <script src="/assets/js/estructuras/clases.js"></script>
 
+
+        <script>
+
+document.cookie.split(";").forEach((cookie) => {
+    const nombre = cookie.trim().split("=")[0];
+    const valor = cookie.trim().split("=")[1];
+    console.log(nombre, valor);
+} )
+
+
+
+        </script>
+
     </body>
 </html>
