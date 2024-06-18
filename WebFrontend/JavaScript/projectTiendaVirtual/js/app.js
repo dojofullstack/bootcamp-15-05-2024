@@ -13,6 +13,14 @@ class Tienda {
         this.catalogoProducto = [];
         this.usuario = {};
     }
+
+
+    agregarCarrito(productoId){
+        console.log("agregando el producto al carrito", productoId);
+
+        // guarda id del producto en locaSotrage
+    }
+
     
     configurarTienda(){
         console.log(`creando tienda ${this.nameStore} espere unos segundos...`);
@@ -40,11 +48,13 @@ class Tienda {
         const precio = document.querySelector("#input-precio").value;
 
         const product = {
+            id: uuid.v4(),
             nombre: nombre,
             description: description,
             imagen: imagen,
             precio: precio
         }
+
 
         console.log("product creado", product);
 
@@ -57,11 +67,46 @@ class Tienda {
 
 
     mostarProductos(){
-
         const salidaProductos = this.catalogoProducto.map( (producto) => {
             const precio = parseFloat(producto.precio).toFixed(1);
             const titulo = producto.nombre.toUpperCase();
             const imagen = producto.imagen;
+        
+            // console.log(imagen);
+            const cardHtml = `
+            <div class="card" style="width: 18rem;">
+          <img src="${imagen}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> ${titulo} </h5>
+            <p class="card-text fs-3"> ${precio} </p>
+            <a href="#" class="btn btn-primary">Ver detalles</a>
+            
+            <div class="d-flex justify-content-end">
+                <button onclick="tienda.agregarCarrito('${producto.id}')">
+                    <i class="bi bi-bookmark-heart fs-1 text-danger pointer"></i>
+                </button>
+            </div>
+            
+          </div>
+        </div>
+            `
+            return cardHtml
+        
+        })
+        
+
+        // console.log(salidaProductos);
+        const catalogoHTML = salidaProductos.join("");
+        document.querySelector("#catalgo-product").innerHTML = catalogoHTML;
+    }
+
+
+    mostarProductosBuscador(productos_busqueda){
+        const salidaProductos = productos_busqueda.map( (producto) => {
+            console.log(producto);
+            const precio = parseFloat(producto.price).toFixed(1);
+            const titulo = producto.title.toUpperCase();
+            const imagen = producto.images[0];
         
             // console.log(imagen);
             const cardHtml = `
@@ -78,16 +123,18 @@ class Tienda {
         
         })
         
-        
-
         // console.log(salidaProductos);
-
         const catalogoHTML = salidaProductos.join("");
-
         document.querySelector("#catalgo-product").innerHTML = catalogoHTML;
-
     }
 
+
+
+    buscarProductos(nombre){
+        axios.get(`https://dummyjson.com/products/search?q=${nombre}`).then((data) => {
+            this.mostarProductosBuscador(data.data.products);
+        })
+    }
 
     guardarProductosLocalStorage(){
 
@@ -110,6 +157,9 @@ class Tienda {
             console.log(data.data);
             this.usuario = data.data;
             const token = this.usuario.token;
+
+            // makeStore.style.display = "block";
+            // createProduct.style.display = "block";
 
             if (token){
                 // crear la cookie del usuario
@@ -136,9 +186,13 @@ class Tienda {
 
             document.querySelector("#userFace").src = this.usuario.image;
             document.querySelector("#userName").innerHTML = this.usuario.firstName;
-
             document.querySelector("#btn-login").style.display = "none";
 
+
+            const makeStore = document.querySelector("#make-store");
+            const createProduct = document.querySelector("#create-product");
+            makeStore.style.display = "block";
+            createProduct.style.display = "block";
         }
         );
 
@@ -164,12 +218,17 @@ class Tienda {
                 this.getProfileUser(valor);
             }
 
-
         } )
 
-
-
     }
+
+
+    closeLogin(){
+        const fechaNow = new Date();
+        document.cookie =  `token=; path=/; expires=${fechaNow.toUTCString()}`;
+        window.location.href = "login.html";
+    }
+
 
 }
 
@@ -259,9 +318,10 @@ function crearTienda(){
 // - Crear producto(completad)
 // - Gurdar datos en LocalStorage (completado)
 // sesiones de auth Login (completado)
-// - Buscar productos  
-// - Agregar producto al carrito
-// - Elimar productos
+// Cerrar sesion de auth Login (completado)
+// - Buscar productos   (completado)
+// - Agregar producto al carrito  (completado)
+// - Elimar productos  (completado)
 // - Obtener detalle del producto
 
 
@@ -276,3 +336,47 @@ function crearTienda(){
 // } else {
 //     //code
 // }
+
+
+
+
+
+function home(){
+
+
+    cargarTienda();
+
+    tienda.validarSesionUser();
+
+
+    const optionCloseLogin = document.querySelector("#close-login");
+    optionCloseLogin.addEventListener("click", () => {
+        tienda.closeLogin();
+    }  )
+
+
+    const makeStore = document.querySelector("#make-store");
+    const createProduct = document.querySelector("#create-product");
+    makeStore.style.display = "none";
+    createProduct.style.display = "none";
+
+
+    const inputSearch = document.querySelector("#input-search");
+    const btnBuscar = document.querySelector("#btn_buscar");
+
+    inputSearch.addEventListener("keydown", (e) => {
+        if (e.code === "Enter"){
+            console.log("buscar producoto...", inputSearch.value);
+            tienda.buscarProductos(inputSearch.value);
+        }
+    }  )
+
+    btnBuscar.addEventListener("click", () => {
+        console.log("buscar producoto...", inputSearch.value);
+        tienda.buscarProductos(inputSearch.value);
+    }  )
+
+
+}
+
+
