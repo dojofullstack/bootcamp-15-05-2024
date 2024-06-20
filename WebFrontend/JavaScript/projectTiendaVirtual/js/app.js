@@ -12,13 +12,93 @@ class Tienda {
         this.bannerStore = bannerStore;
         this.catalogoProducto = [];
         this.usuario = {};
+        this.productCart = []
     }
 
 
-    agregarCarrito(productoId){
-        console.log("agregando el producto al carrito", productoId);
+    removeProduct(idProduct){
+        // console.log("eliminando producto", idProduct);
 
-        // guarda id del producto en locaSotrage
+        const arrayProduct =  this.catalogoProducto.filter((item) => {
+            const isProduct = item.id !== idProduct;
+            return isProduct;
+        }  )
+
+        // console.log(idProduct, arrayProduct);
+
+        this.catalogoProducto = arrayProduct;
+
+        this.mostarProductos();
+        this.guardarProductosLocalStorage();
+
+    }
+
+    getProduct(idProduct){
+
+        const arrayProduct =  this.catalogoProducto.filter((item) => {
+            const isProduct = item.id === idProduct;
+            return isProduct;
+        }  )
+
+        // console.log(idProduct, arrayProduct);
+        return arrayProduct
+
+    }
+
+
+    mostrarCart(){
+        const listCart =  document.querySelector("#list-cart");
+        const subTotalDiv =  document.querySelector("#sub-total");
+
+        let subTotal = 0;
+        const salidaProductos = this.productCart.map((product) => {
+            const productId = product.productoId;
+            const quantity = product.quantity;
+
+            const productoInfo =  this.getProduct(productId)[0];
+            subTotal += parseFloat(productoInfo.precio);
+
+            return (
+               `<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="${productoInfo.imagen}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">${productoInfo.nombre}</h5>
+        <p class="card-text">
+        $ ${productoInfo.precio} x ${quantity}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>`
+            )
+        })
+
+        // console.log(salidaProductos);
+        listCart.innerHTML = salidaProductos.join("");
+
+        subTotalDiv.innerHTML =  `<b> SubTotal:  $ ${subTotal} </b> `;
+
+    }
+
+    agregarCarrito(productoId, quantity=1){
+        console.log("agregando el producto al carrito", productoId);
+        
+        this.productCart.push({
+            productoId: productoId,
+            quantity: quantity
+        });
+
+        // console.log(this.productCart);
+
+        document.querySelector("#total-cart").innerHTML = `Total: ${this.productCart.length}`;
+        localStorage.setItem("productCart",  JSON.stringify(this.productCart) );
+
+        this.mostrarCart();
+       
     }
 
     
@@ -63,6 +143,8 @@ class Tienda {
         console.log(this.catalogoProducto);
         this.mostarProductos();
         this.guardarProductosLocalStorage();
+
+        document.querySelector("#close-modal-product").click();
     }
 
 
@@ -81,9 +163,13 @@ class Tienda {
             <p class="card-text fs-3"> ${precio} </p>
             <a href="#" class="btn btn-primary">Ver detalles</a>
             
-            <div class="d-flex justify-content-end">
-                <button onclick="tienda.agregarCarrito('${producto.id}')">
-                    <i class="bi bi-bookmark-heart fs-1 text-danger pointer"></i>
+            <div class="d-flex justify-content-around">
+               <button class="btn" onclick="tienda.removeProduct('${producto.id}')">
+                    <i class="bi bi-trash-fill text-danger fs-1"></i>
+                </button>
+
+                <button class="btn" onclick="tienda.agregarCarrito('${producto.id}')">
+                    <i class="bi bi-cart-plus fs-1"></i>
                 </button>
             </div>
             
@@ -133,6 +219,8 @@ class Tienda {
     buscarProductos(nombre){
         axios.get(`https://dummyjson.com/products/search?q=${nombre}`).then((data) => {
             this.mostarProductosBuscador(data.data.products);
+        }).catch((error) => {
+            console.log("hubo un error!");
         })
     }
 
@@ -283,6 +371,19 @@ function cargarTienda(){
 
 
 
+    // Carga producto del carrito
+    const productCart = localStorage.getItem("productCart");
+    const productCartObject = JSON.parse(productCart);
+
+    console.log(productCartObject);
+    if (productCartObject !== null){
+        tienda.productCart = productCartObject;
+        document.querySelector("#total-cart").innerHTML = `${tienda.productCart.length}`;
+
+        tienda.mostrarCart();
+    }
+
+
 }
 
 
@@ -323,6 +424,7 @@ function crearTienda(){
 // - Agregar producto al carrito  (completado)
 // - Elimar productos  (completado)
 // - Obtener detalle del producto
+
 
 
 // javascript asinscronica (Promesas Async / await)
@@ -380,3 +482,32 @@ function home(){
 }
 
 
+
+
+
+
+function simpleHello(){
+    console.log("hola inicial");
+}
+
+
+function simpleHello123(){
+    console.log("hola final");
+}
+
+
+function HelloAsync(){
+    console.log("hola async");
+}
+
+
+
+simpleHello();
+simpleHello123();
+
+console.log("final del modulo app.js");
+
+
+
+// asincronia
+// programacion concurrente

@@ -64,9 +64,9 @@
                                     <span class="visually-hidden">(current)</span></a
                                 >
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item dropdown">
                                 <a
                                     class="nav-link dropdown-toggle"
@@ -135,6 +135,19 @@
                               <li><a class="dropdown-item" href="#" id="close-login">Cerrar Sesion</a></li>
                             </ul>
                           </div>
+
+                        
+
+
+
+                          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                           
+                            <div class="text-white">
+                                <i class="bi bi-cart-check  fs-1"></i>
+                                <span id="total-cart">0</span>
+                              </div>
+
+                        </button>
 
 
 
@@ -302,6 +315,7 @@
                 </div>
                 <div class="modal-footer">
                     <button
+                        id="close-modal-product"
                         type="button"
                         class="btn btn-secondary"
                         data-bs-dismiss="modal"
@@ -412,6 +426,40 @@
             </div>
         </div>
         
+
+
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            
+
+
+              <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Canasta</div>
+                <div class="card-body text-success">
+
+                    <div id="list-cart">
+
+                    </div>
+
+                    <div id="sub-total">
+
+                    </div>
+                    
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+
 
 <!-- <div>
   <canvas id="myChart"></canvas>
