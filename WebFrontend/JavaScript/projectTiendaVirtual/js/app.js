@@ -12,7 +12,7 @@ class Tienda {
         this.bannerStore = bannerStore;
         this.catalogoProducto = [];
         this.usuario = {};
-        this.productCart = []
+        this.productCart = [];
     }
 
 
