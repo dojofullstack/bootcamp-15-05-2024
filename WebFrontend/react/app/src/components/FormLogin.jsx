@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 
@@ -9,6 +9,27 @@ export const FormLogin = () => {
     const [perfil, setPerfil] = useState({});
 
 
+
+    useEffect(() => {
+      console.log("ejecutando intrucciones");
+      console.log(perfil);
+
+      if (perfil.token){
+        alert("Sesion INiciada con exito!");
+        window.location.href = "/tienda";
+      }
+
+    } , [perfil]);
+
+
+    useEffect(() => {
+        // console.log(password);
+        if (password.length >= 6){
+          console.log("maximo 6 caracternes");
+        }
+    }, [password])
+
+  
 
 
     const loginAuth = () => {

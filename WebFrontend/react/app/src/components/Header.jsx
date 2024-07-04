@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
+
 
 
 const Header = ({data}) => {
 
+  const navigate = useNavigate();
     // const {logo, title} = data;
 
     console.log(data.logo);
@@ -12,9 +16,11 @@ const Header = ({data}) => {
       <header>
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
           <div className="container">
-            <a className="navbar-brand" href="#">
+
+            <div className="nav-brand" onClick={() => navigate("/") } >
               <img height="80px" src={data.logo} />
-            </a>
+            </div>
+            
             <button
               className="navbar-toggler d-lg-none"
               type="button"
@@ -29,14 +35,19 @@ const Header = ({data}) => {
             <div className="collapse navbar-collapse" id="collapsibleNavId">
               <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link active" href="#" aria-current="page">
+                  <a onClick={() => navigate("/app") } className="nav-link active" href="#" aria-current="page">
                     Home
                     <span className="visually-hidden">(current)</span>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Link
+                  <a className="nav-link" href="#" onClick={() => navigate("/login") }>
+                    Login
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#" onClick={() => navigate("/blog") }>
+                    Blog
                   </a>
                 </li>
                 <li className="nav-item dropdown">
@@ -51,10 +62,10 @@ const Header = ({data}) => {
                     Dropdown
                   </a>
                   <div className="dropdown-menu" aria-labelledby="dropdownId">
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="#" onClick={() => navigate("/") }>
                       Action 1
                     </a>
-                    <a className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="#" onClick={() => navigate("/app") }>
                       Action 2
                     </a>
                   </div>
