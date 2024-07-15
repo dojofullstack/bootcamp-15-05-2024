@@ -5,6 +5,7 @@ import './assets/css/styles.css'
 import Home from './views/Home.jsx'
 import { Login } from './views/Login.jsx'
 import Rutas from './Rutas.jsx'
+// import { debugContextDevtool } from 'react-context-devtool';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,3 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
  
   </React.StrictMode>,
 )
+
+
+
+// debugContextDevtool(document.getElementById('root'));

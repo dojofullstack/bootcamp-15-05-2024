@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import axios from "axios";
+import AppContext from "../context";
 
 
 
@@ -12,8 +13,12 @@ const Home = () => {
     const inputRef =  useRef();
     const inputRefUpload =  useRef();
 
+    const {blog, updateArticles, updatePerfil} = useContext(AppContext);
+
     // console.log("montando componente");
     // console.log(products);
+
+    console.log("blog", blog);
 
 
     const dataHeader = {
@@ -39,6 +44,9 @@ const Home = () => {
         axios.get('https://dummyjson.com/products').then((response) => {
             console.log(response.data);
             setProducts(response.data);
+
+            updateArticles(response.data.products);
+
         })
 
     }, []);
@@ -57,6 +65,7 @@ const Home = () => {
 
             {/* <Main props={dataBlog}  props2={dataBlog2}  /> */}
 
+            {/* <button onClick={() => updateArticles(["iphon1", "iphon2", "iphoon3"])  }>Interactuar con el contexto</button> */}
 
             <input ref={inputRef} id="product-search" type="text" placeholder="Buscar productos" />
 

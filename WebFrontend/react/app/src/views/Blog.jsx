@@ -3,11 +3,19 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useDojoStore from "../store";
 
 export const Blog = () => {
   const { slug } = useParams();
 
   const [article, setArticle] = useState();
+
+  const puntos = useDojoStore( (state) => state.puntos );
+  const productos = useDojoStore( (state) => state.productos );
+  const updatePuntos = useDojoStore((state) => state.updatePuntos);
+
+  console.log(puntos, productos);
+
 
   const dataHeader = {
     title: "Blog Dojo Coding",
@@ -31,6 +39,12 @@ export const Blog = () => {
         <h1>Titulo: {article?.title} </h1>
 
         <p>{article?.body}</p>
+
+        <h3>
+          Puntos: {puntos}
+        </h3>
+
+        <button onClick={updatePuntos}>ACtuliazar State de Zustand</button>
       </div>
 
       <Footer />
