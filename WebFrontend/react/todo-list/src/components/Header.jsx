@@ -1,4 +1,20 @@
+import { useState } from "react";
+import useStore from "../store";
+
 const Header = () => {
+
+  const searchTask = useStore((state) => state.searchTask);
+
+  // const listaActiva = useStore((state) => state.listaActiva);
+  // const taskSearch = useStore((state) => state.taskSearch);
+
+  const [inputSearch, setInputSearch] = useState("");
+
+
+  // console.log(listaActiva, taskSearch);
+  
+
+
   return (
     <>
       <div className="navbar bg-base-100">
@@ -9,9 +25,17 @@ const Header = () => {
           <div className="form-control">
             <input
               type="text"
-              placeholder="Search"
-              className="input input-bordered w-24 md:w-auto"
-            />
+              placeholder="Buscador de tareas"
+              className="input input-bordered w-full"
+              value={inputSearch}
+              onChange={(e) => setInputSearch(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter"){
+                  searchTask(inputSearch);
+                  setInputSearch("");
+                }
+            }  }
+              />
           </div>
           <div className="dropdown dropdown-end">
             <div
