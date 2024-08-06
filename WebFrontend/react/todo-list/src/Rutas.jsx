@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 // import App from "./App"
 import Home from "./views/Home";
+import Login from "./views/Login";
 
 
 
@@ -10,7 +11,8 @@ const Rutas = () => {
 
             <Routes>
 
-                <Route path="/" element={<Home/>} />
+                 <Route path="/" element={<Home/>} />
+                 <Route path="/login" element={<Login/>} />
 
             </Routes>
 

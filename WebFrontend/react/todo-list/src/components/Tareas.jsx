@@ -3,6 +3,7 @@ import useStore from "../store";
 import { useEffect, useState } from "react";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+import { FaCheckDouble } from "react-icons/fa";
 
 
 export const Tareas = () => {
@@ -13,6 +14,11 @@ export const Tareas = () => {
   const deleteTask = useStore((state) => state.deleteTask);
   const taskSearch = useStore((state) => state.taskSearch);
   const clearTaskSearch = useStore((state) => state.clearTaskSearch);
+  const addTasksCompleted = useStore((state) => state.addTasksCompleted);
+  const tasksCompleted = useStore((state) => state.tasksCompleted);
+
+
+  console.log("tasksCompleted", tasksCompleted);
   
 
   
@@ -109,8 +115,21 @@ export const Tareas = () => {
                 }  }
                 value={inputEditTask} onChange={(e) => setinputEditTask(e.target.value)} type="text"
                 placeholder={`Editar Tarea ${item}`} className="input input-bordered w-full" />:
-             <span> {item}  </span>
+
+             <> 
+                {
+                  tasksCompleted.includes(item) ?
+                   <span>  <del className="text-black"> {item}  </del>  </span>:
+                   <span> {item}  </span>
+                  }
+
+             </>
             }  
+
+              <div onClick={() =>  addTasksCompleted(item)} >
+                <FaCheckDouble className="text-accent text-3xl" />
+              </div>
+
 
               <div onClick={() => setidEditTask(item) } >
               <CiEdit className="text-accent text-3xl" />

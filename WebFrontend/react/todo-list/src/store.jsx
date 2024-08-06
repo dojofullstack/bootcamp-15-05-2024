@@ -1,6 +1,55 @@
+import axios from 'axios';
 import { create } from 'zustand'
 
+
+const verifyLoginUser = (set, get) => {
+
+  const token = localStorage.getItem("token");
+
+  if (token){
+    console.log("token activo, iniciando sesion...");
+    // console.log(JSON.parse(token));
+    const url = 'https://dummyjson.com/auth/me';
+    
+    axios.defaults.headers.common['Authorization'] = 'Bearer '.concat(JSON.parse(token)); // for all requests
+
+    axios.get(url).then(res => {
+
+      set({
+        isLogin: true,
+        user: res.data
+      });
+
+    });
+
+  }
+
+}
+
+
+
 const useStore = create((set, get) => ({
+  user: {},
+  isLogin: false,
+  verifyLoginUser: () => verifyLoginUser(set, get),
+  closeLogin: () => {
+    localStorage.removeItem("token");
+    set({
+      isLogin: false,
+      user: null
+    });
+  } ,
+  updateUser: (data) => {
+    localStorage.setItem("token", JSON.stringify(data.token));
+    set({
+      isLogin: true,
+      user: data
+    });
+  },
+  tasksCompleted : [],
+  addTasksCompleted : (task) => set({
+    tasksCompleted: [...get().tasksCompleted, task]
+  }),
   listaActiva: "",
   taskSearch: "",
   clearTaskSearch: () => (set({taskSearch: ""})),
