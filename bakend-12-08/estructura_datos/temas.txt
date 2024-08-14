@@ -1,0 +1,11 @@
+
+- condiciones
+- iteradores
+- funciones
+- clases y POO
+- Librerias Flask o FastAPI
+- Framework Django (Desarrollo de Plataformas SaaS)
+- ORM
+- Full API REST
+- CRUD
+- DataBase

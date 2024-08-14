@@ -1,0 +1,13 @@
+{
+    "email": "user@gmailc.om",
+    "edad": 12,
+    "isActive": true,
+    "roles": [
+        "editor",
+        "lector"
+    ],
+    "preferencias": {
+        "color": "green",
+        "carrito": null
+    }
+}
