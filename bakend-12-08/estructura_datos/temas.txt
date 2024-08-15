@@ -3,9 +3,13 @@
 - iteradores
 - funciones
 - clases y POO
-- Librerias Flask o FastAPI
+- requests
+- selenium, utils
+
+- Librerias Flask o FastAPI (micro servicios , api)
 - Framework Django (Desarrollo de Plataformas SaaS)
 - ORM
 - Full API REST
+- Auth JWT
 - CRUD
 - DataBase

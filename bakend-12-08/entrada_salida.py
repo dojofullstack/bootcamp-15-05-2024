@@ -37,3 +37,6 @@ print(salidaJson)
 
 procesar = open("perfil.json", "w")
 procesar.write(salidaJson) 
+
+
+fichero.close()
