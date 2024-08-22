@@ -4,13 +4,13 @@
 Tipos de alojamientos de sitios web:
 
 1. Web Hosting (Share Hosting)
-- trbajan con stack especifico javascript, php, java, python.
-- se maneja multiples planes
-- limitaciones, mas ancho de banda, mas memoria (storage), limitan las visitas
+- Trabajar con stack especifico javascript, php, java, python.
+- Se maneja multiples planes
+- Limitaciones, mas ancho de banda, mas memoria (storage), limitan las visitas
 - El conocimientos basicos.
-- email bussines, herramienstas secondarias.
+- Email bussines, herramienstas secondarias, dominio .com, subdominios FREE.    mipagina.shrahosting.com
 - planes desde 5 usd / mensual.
-- soporte tecnico lento.
+- Soporte tecnico lento.
 
 
 
@@ -21,12 +21,14 @@ Tipos de alojamientos de sitios web:
  - Puedes elegir sistema operativo (Windows Server & Linux)
 - Se requiere conocimientos mediano sobre gestion de servidores
 - Soporte mas activo.
+- Servidores Disponibilidad 99%.
+- *.*.*.*
 
 
 
 (Freekis Tech)
 2.5 Crear tu propio Servidor Privado (conocimentos medianos)
-- Red intenet
+- Red intenet.
 - Computador PC, Laptop, Phone.
 - Router.
 - IP Static & Dinamica (Servicios Proxy)
@@ -43,7 +45,9 @@ Tipos de alojamientos de sitios web:
 - Alibaba Cloud.
 
 - Bussine Plan (Paga por uso).
-- Serverless (Alta escalabilidad, alta disponibilidad, pagas por uso)
+- Certificados SSL FREE For Life.
+- Serverless Frontend, Backend, DB NoSql,  SQL   (Alta escalabilidad, alta disponibilidad, pagas por uso)
+
 - si requieres conocimentos medianos tenicos de cloud services.
 - Soporte es muy rapido (eficiente)
 
@@ -51,10 +55,16 @@ Tipos de alojamientos de sitios web:
 
 
 4. Startup Netlify y Vercel (Frontend)
-- Plan de inicio gratis
+- Plan de inicio gratis o FREE.
 
 
+-----------------------------------------------
+Dominios:
 
+- Comprar o Registrar.
+- TLD (tipos de dominios)
+- Configuracion.
+- NS
 
 
 

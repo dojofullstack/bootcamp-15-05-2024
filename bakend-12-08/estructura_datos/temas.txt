@@ -13,3 +13,6 @@
 - Auth JWT
 - CRUD
 - DataBase
+
+
+python -m pip install  virtualenv
