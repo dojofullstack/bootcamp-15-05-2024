@@ -16,8 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from blog import views
+from apiProduct.views import ProductApiView
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('formulario', views.formulario, name='formulario'),
+    path('formulario-prueba', views.FormularioView.as_view(), name='formulario'),
+    path('api/v1/hello-world', csrf_exempt(views.HelloWorldApi.as_view()) ),
+    path('api/v1/hello-world/<slug:pk>', csrf_exempt(views.HelloWorldApi.as_view()) ),
 ]
+
+
+ROUTES_API_PRODUCT = [
+    path('api/v1/product', ProductApiView.as_view()),
+]
+
+
+
+urlpatterns.extend(ROUTES_API_PRODUCT)
