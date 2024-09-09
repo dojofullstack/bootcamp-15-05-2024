@@ -1,0 +1,12 @@
+
+
+CRUD
+- Get detaill
+- Delete
+- Update
+
+- RELATIONS
+
+AUTH API TOKEN & JWT
+
+DEPLOYMENT AWS
